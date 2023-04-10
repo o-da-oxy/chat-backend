@@ -1,0 +1,29 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fieldReference", "clientExtensions"]
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int       @id @default(autoincrement())
+  name        String
+  email       String    @unique
+  password    String
+  picture     String?
+  newMessages Message[]
+  status      String    @default("online")
+}
+
+model Message {
+  id       Int    @id @default(autoincrement())
+  content  String
+  from     User   @relation(fields: [authorId], references: [id])
+  authorId Int
+  to       String
+  socketId String
+  date     String
+}
