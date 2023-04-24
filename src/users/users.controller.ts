@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
+import { io } from '../index';
 
 export async function getAllUsersController(
   req: Request,
@@ -34,7 +35,6 @@ export async function createUserController(
 ) {
   try {
     const { db } = req.context;
-
     res.json(
       await db.user.create({
         data: req.body,
@@ -73,5 +73,25 @@ export async function loginUserController(
     }
   } catch (err: any) {
     res.status(400).json(err.message);
+  }
+}
+
+export async function logoutUserController(req: Request, res: Response) {
+  try {
+    const { db } = req.context;
+    const user = await db.user.findFirst({
+      where: {
+        id: req.body.id,
+      },
+    });
+    if (user) {
+      user.status = 'offline';
+    }
+    const members = await db.user.findMany();
+    io.emit('new-user', members);
+    res.status(200).send();
+  } catch (e) {
+    console.log(e);
+    res.status(400).send();
   }
 }

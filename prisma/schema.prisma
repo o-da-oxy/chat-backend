@@ -14,16 +14,17 @@ model User {
   email       String    @unique
   password    String
   picture     String?
-  newMessages Message[]
   status      String    @default("online")
+  newMessages Message[]
 }
 
 model Message {
   id       Int    @id @default(autoincrement())
   content  String
-  from     User   @relation(fields: [authorId], references: [id])
   authorId Int
   to       String
   socketId String
   date     String
+  time     String
+  from     User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
 }

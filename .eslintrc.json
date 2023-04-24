@@ -1,6 +1,7 @@
 {
   "extends": "./node_modules/gts/",
   "rules": {
-    "no-process-exit": 0
+    "no-process-exit": 0,
+    "node/no-extraneous-import": 0
   }
 }

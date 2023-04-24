@@ -9,16 +9,6 @@ async function main() {
       password: 'admin',
     },
   });
-  const date = new Date();
-  const message = await prisma.message.create({
-    data: {
-      content: 'Hi!',
-      authorId: user.id,
-      socketId: '123',
-      date: date.toLocaleString(),
-      to: 'Group1',
-    },
-  });
 }
 
 main()
