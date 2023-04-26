@@ -1,32 +1,79 @@
 import { prisma } from '../index';
 
-// functions for socket in index.ts
+type Message = {
+  date: string;
+  time: string;
+  content: string;
+  to: string;
+  authorId: number;
+};
 
-export async function getUsers() {
-  const users = await prisma.user.findMany();
-  return users;
+export async function groupMessagesByDate(messages: Message[]) {
+  const groupsByDate = messages.reduce<{ [key: string]: Message[] }>(
+    (result, message) => {
+      if (result[message.date]) {
+        result[message.date].push(message);
+      } else {
+        result[message.date] = [message];
+      }
+      return result;
+    },
+    {}
+  );
+
+  const groupedMessages = await Promise.all(
+    Object.entries(groupsByDate).map(async ([date, messagesByDate]) => {
+      const messagesWithAuthors = await Promise.all(
+        messagesByDate.map(async ({ time, content, to, authorId }) => {
+          const author = await getAuthorById(authorId);
+          return {
+            time,
+            content,
+            to,
+            author,
+          };
+        })
+      );
+      return {
+        date,
+        messagesByDate: messagesWithAuthors,
+      };
+    })
+  );
+
+  return groupedMessages;
 }
 
 export async function getLastMessagesFromRoom(room: string) {
   const roomMessages = await prisma.message.groupBy({
-    by: ['date'],
+    by: ['date', 'time', 'content', 'to', 'authorId'],
     where: {
       to: room,
     },
     orderBy: {
-      date: 'asc', // по возрастанию
+      date: 'asc',
     },
+    select: {
+      date: true,
+      time: true,
+      content: true,
+      to: true,
+      authorId: true,
+    } as never,
   });
   return roomMessages;
 }
 
-export function sortRoomMessagesByDate(messages: any[]) {
-  // from the earliest to the latest
-  return messages.sort((a, b) => {
-    const date1 = a.date.split('/');
-    const date2 = b.date.split('/');
-    const dateString1 = `${date1[2]}${date1[0]}${date1[1]}`;
-    const dateString2 = `${date2[2]}${date2[0]}${date2[1]}`;
-    return dateString1 < dateString2 ? -1 : 1;
+export async function getAuthorById(id: number) {
+  const author = await prisma.user.findFirst({
+    where: {
+      id: id,
+    },
   });
+  return author;
+}
+
+export async function getUsers() {
+  const author = await prisma.user.findMany();
+  return author;
 }

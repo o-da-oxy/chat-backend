@@ -7,7 +7,6 @@ export async function getAllUsersController(
   next: NextFunction
 ) {
   try {
-    // таким образом достаем db в любом месте из контекста
     const { db } = req.context;
     res.json(await db.user.findMany(req.body));
   } catch (err) {
@@ -66,7 +65,14 @@ export async function loginUserController(
       },
     });
     if (user) {
-      user.status = 'online';
+      const updatedUser = await db.user.update({
+        where: {
+          email: req.body.email,
+        },
+        data: {
+          status: 'online',
+        },
+      });
       res.status(200).json(user);
     } else {
       throw Error;
@@ -85,7 +91,14 @@ export async function logoutUserController(req: Request, res: Response) {
       },
     });
     if (user) {
-      user.status = 'offline';
+      const updatedUser = await db.user.update({
+        where: {
+          id: req.body.id,
+        },
+        data: {
+          status: 'offline',
+        },
+      });
     }
     const members = await db.user.findMany();
     io.emit('new-user', members);
