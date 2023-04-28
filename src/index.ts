@@ -10,6 +10,7 @@ import {
   getUsers,
   groupMessagesByDate,
 } from './socket-functions/socket.functions';
+import { IRoom } from './types/entities';
 export const prisma = new PrismaClient();
 const logger = morgan('dev');
 const helmet = require('helmet');

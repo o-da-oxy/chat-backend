@@ -1,0 +1,116 @@
+RESTAURANT
+
+
+Waiters
+Официанты
+
+Wine waiters
+Сомелье
+
+A head chef
+Шеф-повар
+
+Guests
+Гости, посетители
+
+Starters / Appetizers
+Закуски
+
+A main course / dish / entree
+Основное блюдо
+
+A special / specialty
+Фирменное блюдо
+
+A today’s special
+Блюдо дня
+
+Dessert
+Десерт
+
+A side dish
+Гарнир
+
+Dressing
+Заправка
+
+Breakfast
+Завтрак
+
+Lunch
+Обед
+
+Dinner
+Ужин
+
+Snack
+Перекус
+
+My compliments to the chef.
+Мои комплименты повару.
+
+I will bring the check right now.
+Я сейчас принесу счет.
+
+Are you paying with a card?
+Вы платите картой?
+
+Do you need any change?
+Вам нужна сдача?
+
+Could we have some more bread?
+Можно нам еще хлеба?
+
+Could we have some dressing, please?
+Можно нам какой-нибудь соус, пожалуйста.
+
+I am allergic to nuts/wheat/honey.
+У меня аллергия на орехи/пшеницу/мед.
+
+I am a vegetarian. Do you have any vegetarian dishes?
+Я вегетарианец. У вас есть какие-нибудь вегетарианские блюда?
+
+I do not eat seafood/meat/pork.
+Я не ем морепродукты/мясо/свинину.
+
+Can I get you any drinks?
+Могу я принести вам что-нибудь из напитков?
+
+What would you like for dessert?
+Чтобы вы хотели на десерт?
+
+Would you like anything else?
+Вы хотели бы что-нибудь еще?
+
+Enjoy your meal!
+Приятного аппетита!
+
+What is this dish?
+Что это за блюдо?
+
+I will take this.
+Я возьму это.
+
+I would like the set lunch.
+Я бы хотел комплексный обед.
+
+What do you recommend?
+Что вы порекомендуете?
+
+What are your specialties?
+Какие у вас фирменные блюда?
+
+Can I have the menu, please?
+Можно мне меню, пожалуйста?
+
+Can I take your order?
+Могу я принять ваш заказ?
+
+We would like a table for four, please.
+Мы бы хотели столик на четверых, пожалуйста.
+
+Could we get a table by the window?
+Можем мы сесть за столик у окна?
+
+
+DIALOGS: https://englandlearn.com/dialogi/restouran

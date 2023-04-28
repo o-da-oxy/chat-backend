@@ -1,15 +1,8 @@
 import { prisma } from '../index';
+import { IMessage } from '../types/entities';
 
-type Message = {
-  date: string;
-  time: string;
-  content: string;
-  to: string;
-  authorId: number;
-};
-
-export async function groupMessagesByDate(messages: Message[]) {
-  const groupsByDate = messages.reduce<{ [key: string]: Message[] }>(
+export async function groupMessagesByDate(messages: IMessage[]) {
+  const groupsByDate = messages.reduce<{ [key: string]: IMessage[] }>(
     (result, message) => {
       if (result[message.date]) {
         result[message.date].push(message);

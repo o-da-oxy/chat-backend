@@ -1,0 +1,155 @@
+AIRPORT
+
+
+Airport
+Аэропорт
+
+Flight
+Полет
+
+Check-in desk
+Стойка регистрации
+
+Check-in for the flight
+Регистрация на рейс
+
+Booking
+Бронирование
+
+Ticket
+Билет
+
+One way
+В одну стороны
+
+Round trip
+Туда и обратно
+
+Customs
+Таможня
+
+Suitcase
+Чемодан
+
+Carry-on luggage
+Ручная кладь
+
+Checked luggage
+Сдаваемый багаж
+
+Departure
+Отправление
+
+Arrival
+Прибытие
+
+Gate
+Выход
+
+Baggage claim / conveyor belt
+Прием багажа / конвейерная лента
+
+First class
+Первый класс
+
+Business class
+Бизнес-класс
+
+Passport
+Паспорт
+
+Liquids
+Жидкости
+
+Sharp objects
+Острые предметы
+
+Boarding pass
+Посадочный талон
+
+Check-in desk
+Стойка регистрации
+
+Overbooking
+Перебронирование
+
+Aircraft
+Самолет
+
+Cockpit
+Кабина
+
+Crew
+Экипаж
+
+Stewardess / Air hostess
+Стюардесса
+
+Steward
+Стюард
+
+Flight attendant / Air host assist
+Стюардесса(стюард)
+
+Seat belt
+Ремень безопасности
+
+Turbulence
+Турбулентность
+
+Customs
+Таможня
+
+To book
+Бронировать (билет)
+
+To board
+Садиться
+
+To depart
+Отправляться
+
+To arrive
+Прибывать
+
+To take off
+Взлетать
+
+To land
+Приземляться
+
+I’d like to make an airline reservation.
+Я бы хотел забронировать билет на самолет.
+
+How much is a child’s ticket?
+Сколько стоит детский билет?
+
+Is that a direct flight?
+Это прямой рейс?
+
+I’d like a window seat, please.
+Я бы предпочел место у окна, пожалуйста.
+
+I’d like an aisle seat, please.
+Я бы предпочел место рядом с проходом, пожалуйста.
+
+Where will you be flying?
+Куда вы летите?
+
+The plane starts boarding at 7 p.m.
+Посадка на рейс начнется в 19:00.
+
+May I see your passport, please?
+Ваш паспорт, пожалуйста.
+
+Do you have any luggage?
+У вас есть багаж?
+
+Do you have anything to declare?
+У вас есть что-нибудь, подлежащее декларированию?
+
+I have only my personal belongings.
+У меня только личные вещи.
+
+
+DIALOGS: https://englandlearn.com/dialogi/aeroport
