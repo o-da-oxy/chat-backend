@@ -16,6 +16,7 @@ model User {
   picture     String?
   status      String    @default("online")
   newMessages Message[]
+  currentRole String    @default("")
 }
 
 model Message {

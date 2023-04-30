@@ -10,7 +10,6 @@ import {
   getUsers,
   groupMessagesByDate,
 } from './socket-functions/socket.functions';
-import { IRoom } from './types/entities';
 export const prisma = new PrismaClient();
 const logger = morgan('dev');
 const helmet = require('helmet');
@@ -71,7 +70,31 @@ io.on('connection', (socket: Socket) => {
       const messages = await getLastMessagesFromRoom(room);
       const roomMessages = await groupMessagesByDate(messages);
       io.to(room).emit('room-messages', roomMessages);
-      socket.broadcast.emit('notifications', room);
+      socket.emit('room-messages', roomMessages);
+    }
+  );
+
+  socket.on(
+    'update-role',
+    async ({
+      userId,
+      currentRoom,
+      selectedRole,
+    }: {
+      userId: number;
+      currentRoom: string;
+      selectedRole: string;
+    }) => {
+      console.log(
+        `Updating role for user in room ${currentRoom} to ${selectedRole}`
+      );
+      await prisma.user.update({
+        where: { id: userId },
+        data: { currentRole: selectedRole },
+      });
+      socket
+        .to(currentRoom)
+        .emit('role-updated', { userId: userId, selectedRole });
     }
   );
 });

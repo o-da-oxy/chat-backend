@@ -16,8 +16,9 @@ export async function groupMessagesByDate(messages: IMessage[]) {
 
   const groupedMessages = await Promise.all(
     Object.entries(groupsByDate).map(async ([date, messagesByDate]) => {
+      const sortedMessages = messagesByDate.sort((a, b) => a.id - b.id);
       const messagesWithAuthors = await Promise.all(
-        messagesByDate.map(async ({ time, content, to, authorId }) => {
+        sortedMessages.map(async ({ time, content, to, authorId }) => {
           const author = await getAuthorById(authorId);
           return {
             time,
@@ -39,12 +40,12 @@ export async function groupMessagesByDate(messages: IMessage[]) {
 
 export async function getLastMessagesFromRoom(room: string) {
   const roomMessages = await prisma.message.groupBy({
-    by: ['date', 'time', 'content', 'to', 'authorId'],
+    by: ['date', 'time', 'content', 'to', 'authorId', 'id'],
     where: {
       to: room,
     },
     orderBy: {
-      date: 'asc',
+      id: 'asc',
     },
     select: {
       date: true,
@@ -52,6 +53,7 @@ export async function getLastMessagesFromRoom(room: string) {
       content: true,
       to: true,
       authorId: true,
+      id: true,
     } as never,
   });
   return roomMessages;

@@ -23,8 +23,23 @@
     "description": "RESTAURANT\n\n\nWaiters\nОфицианты\n\nWine waiters\nСомелье\n\nA head chef\nШеф-повар\n\nGuests\nГости, посетители\n\nStarters / Appetizers\nЗакуски\n\nA main course / dish / entree\nОсновное блюдо\n\nA special / specialty\nФирменное блюдо\n\nA today’s special\nБлюдо дня\n\nDessert\nДесерт\n\nA side dish\nГарнир\n\nDressing\nЗаправка\n\nBreakfast\nЗавтрак\n\nLunch\nОбед\n\nDinner\nУжин\n\nSnack\nПерекус\n\nMy compliments to the chef.\nМои комплименты повару.\n\nI will bring the check right now.\nЯ сейчас принесу счет.\n\nAre you paying with a card?\nВы платите картой?\n\nDo you need any change?\nВам нужна сдача?\n\nCould we have some more bread?\nМожно нам еще хлеба?\n\nCould we have some dressing, please?\nМожно нам какой-нибудь соус, пожалуйста.\n\nI am allergic to nuts/wheat/honey.\nУ меня аллергия на орехи/пшеницу/мед.\n\nI am a vegetarian. Do you have any vegetarian dishes?\nЯ вегетарианец. У вас есть какие-нибудь вегетарианские блюда?\n\nI do not eat seafood/meat/pork.\nЯ не ем морепродукты/мясо/свинину.\n\nCan I get you any drinks?\nМогу я принести вам что-нибудь из напитков?\n\nWhat would you like for dessert?\nЧтобы вы хотели на десерт?\n\nWould you like anything else?\nВы хотели бы что-нибудь еще?\n\nEnjoy your meal!\nПриятного аппетита!\n\nWhat is this dish?\nЧто это за блюдо?\n\nI will take this.\nЯ возьму это.\n\nI would like the set lunch.\nЯ бы хотел комплексный обед.\n\nWhat do you recommend?\nЧто вы порекомендуете?\n\nWhat are your specialties?\nКакие у вас фирменные блюда?\n\nCan I have the menu, please?\nМожно мне меню, пожалуйста?\n\nCan I take your order?\nМогу я принять ваш заказ?\n\nWe would like a table for four, please.\nМы бы хотели столик на четверых, пожалуйста.\n\nCould we get a table by the window?\nМожем мы сесть за столик у окна?\n\n\nDIALOGS: https://englandlearn.com/dialogi/restouran\n"
   },
   {
-    "name": "Job-interview",
+    "name": "Job interview",
     "roles": ["", "Candidate", "Interviewer"],
     "description": "JOB INTERVIEW\n\n\nDiscuss your resume.\nОбсудим ваше резюме.\n\nProven track record\nОфициальная занятость\n\nCustomer-oriented\nОриентированный на работу с клиентами\n\nMeeting targets\nДостижение целей\n\nHandle stress easily\nЛегко справляться со стрессом\n\nTeam player\nКомандный игрок\n\nCan-do attitude\nОтношение к работе в стиле «я смогу»\n\nDrive to succeed\nСтремление к успеху\n\nHow many employees work for the organization?\nСколько сотрудников работает в организации?\n\nPlease tell me a little bit about the people with whom I’ll be working most closely.\nПожалуйста, расскажите мне немного о людях, с которыми мне надо будет наиболее тесно сотрудничать.\n\nWill I work independently or in a team?\nЯ буду работать самостоятельно или в команде?\n\nWhere will I be working?\nГде я буду работать?\n\nHow advanced is the hardware and software I will be expected to use?\nНасколько сложное оборудование и программное обеспечение я должен буду использовать?\n\nHow did this job become available?\nПочему эта вакансия свободна?\n\nDoes this job usually lead to other positions at the company?\nЭта работа предполагает карьерный рост?\n\nWill the company be entering any new markets in the next couple of years?\nКомпания выйдет на какие-нибудь новые рынки в ближайшие несколько лет?\n\nTell me about yourself\nРасскажите о себе\n\nWhat are your strengths?\nКаковы ваши сильные стороны?\n\nWhat are your weaknesses?\nКаковы ваши слабые стороны?\n\nWhy should we hire you?\nПочему нам следует выбрать вас?\n\nWhy have you left your job?\nПочему вы ушли со своей работы?\n\nWhy do you want this job?\nПочему вам интересна эта работа?\n\nWhat are your goals for the future?\nКаковы ваши цели на будущее?\n\nWhat are your salary expectations?\nНа какую зарплату вы рассчитываете?\n\nTell me about an accomplishment you are most proud of\nРасскажите мне о достижении, которым вы больше всего гордитесь\n\nDo you have any questions?\nУ вас есть какие-нибудь вопросы?\n\nAre you willing to relocate?\nВы готовы к переезду?\n\nI majored in...\nМоей специальностью была...\n\nI’m used to working in a busy environment\nЯ привык к работе в напряженной обстановке\n\nWhat are some of your leadership experiences?\nБыл ли у вас опыт руководства?\n\nI perform well under pressure\nЯ хорошо справляюсь с заданиями в стрессовых ситуациях\n\n\nDIALOGS: https://englandlearn.com/dialogi/sobesedovanie\n"
+  },
+  {
+    "name": "At someone's house (...)",
+    "roles": [""],
+    "description": "..."
+  },
+  {
+    "name": "About films (...)",
+    "roles": [""],
+    "description": "..."
+  },
+  {
+    "name": "About books (...)",
+    "roles": [""],
+    "description": "..."
   }
 ]
