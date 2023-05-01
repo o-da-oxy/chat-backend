@@ -1,6 +1,5 @@
 RESTAURANT
 
-
 Waiters
 Официанты
 
@@ -111,6 +110,5 @@ We would like a table for four, please.
 
 Could we get a table by the window?
 Можем мы сесть за столик у окна?
-
 
 DIALOGS: https://englandlearn.com/dialogi/restouran

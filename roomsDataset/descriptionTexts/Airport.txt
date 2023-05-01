@@ -1,6 +1,5 @@
 AIRPORT
 
-
 Airport
 Аэропорт
 
@@ -150,6 +149,5 @@ Do you have anything to declare?
 
 I have only my personal belongings.
 У меня только личные вещи.
-
 
 DIALOGS: https://englandlearn.com/dialogi/aeroport

@@ -1,6 +1,5 @@
 GENERAL
 
-
 Where do you live? / Where are you from?
 Где вы живете? / Откуда вы?
 
@@ -105,6 +104,5 @@ Are you on Facebook?
 
 What’s your username?
 Какое у тебя там имя пользователя?
-
 
 DIALOGS: https://englandlearn.com/dialogi/znacomstvo

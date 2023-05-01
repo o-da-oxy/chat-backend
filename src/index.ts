@@ -70,7 +70,6 @@ io.on('connection', (socket: Socket) => {
       const messages = await getLastMessagesFromRoom(room);
       const roomMessages = await groupMessagesByDate(messages);
       io.to(room).emit('room-messages', roomMessages);
-      socket.emit('room-messages', roomMessages);
     }
   );
 
