@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { io } from '../index';
+import bcrypt from 'bcrypt';
 
 export async function getAllUsersController(
   req: Request,
@@ -26,17 +27,16 @@ export async function getUserByIdController(
     next(err);
   }
 }
-
-export async function createUserController(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export async function createUserController(req: Request, res: Response) {
   try {
     const { db } = req.context;
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
     res.json(
       await db.user.create({
-        data: req.body,
+        data: {
+          ...req.body,
+          password: hashedPassword,
+        },
       })
     );
   } catch (err: any) {
@@ -51,20 +51,15 @@ export async function createUserController(
   }
 }
 
-export async function loginUserController(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export async function loginUserController(req: Request, res: Response) {
   try {
     const { db } = req.context;
     const user = await db.user.findFirst({
       where: {
         email: req.body.email,
-        password: req.body.password,
       },
     });
-    if (user) {
+    if (user && (await bcrypt.compare(req.body.password, user.password))) {
       const updatedUser = await db.user.update({
         where: {
           email: req.body.email,
