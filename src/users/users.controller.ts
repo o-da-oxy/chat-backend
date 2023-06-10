@@ -27,6 +27,7 @@ export async function getUserByIdController(
     next(err);
   }
 }
+
 export async function createUserController(req: Request, res: Response) {
   try {
     const { db } = req.context;

@@ -1,35 +1,36 @@
 import { Request, Response } from 'express';
-import roomsData from '../../roomsDataset/rooms.json';
-import { IRoom } from '../types/entities';
 
 export async function getRoomNamesController(req: Request, res: Response) {
   try {
-    const rooms = roomsData.map((room: IRoom) => room.name);
-    res.json(rooms);
+    const { db } = req.context;
+    const rooms = await db.room.findMany({ select: { name: true } });
+    const roomNames = rooms.map(room => room.name);
+    res.json(roomNames);
   } catch (error) {
-    console.error('Error reading rooms.json:', error);
+    console.error('Error retrieving room names:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 }
 
 export async function getRoomsRolesController(req: Request, res: Response) {
   try {
-    const nameRolesPairs = roomsData.reduce(
-      (acc: { [name: string]: string[] }, room: IRoom) => {
-        const { name, roles } = room;
-        acc[name] = acc[name] || [];
-        acc[name].push(...roles);
-        return acc;
-      },
-      {}
-    );
+    const { db } = req.context;
+    const rooms = await db.room.findMany({
+      select: { name: true, roles: true },
+    });
+    const nameRolesPairs = rooms.reduce((acc: Record<string, any>, room) => {
+      const { name, roles } = room;
+      acc[name] = acc[name] || [];
+      acc[name].push(...roles);
+      return acc;
+    }, {});
     const result = Object.entries(nameRolesPairs).map(([name, roles]) => ({
       name,
       roles,
     }));
     res.json(result);
   } catch (error) {
-    console.error('Error reading rooms.json:', error);
+    console.error('Error retrieving room roles:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 }
@@ -39,15 +40,17 @@ export async function getRoomsDescriptionsController(
   res: Response
 ) {
   try {
-    const roomsInfo: { name: string; description: string }[] = roomsData.map(
-      (room: { name: string; roles: string[]; description: string }) => {
-        const { name, description } = room;
-        return { name, description };
-      }
-    );
+    const { db } = req.context;
+    const rooms = await db.room.findMany({
+      select: { name: true, description: true },
+    });
+    const roomsInfo = rooms.map(room => ({
+      name: room.name,
+      description: room.description,
+    }));
     res.json(roomsInfo);
   } catch (error) {
-    console.error('Error reading rooms.json:', error);
+    console.error('Error retrieving room descriptions:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 }
